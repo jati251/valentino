@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import logo from './dilla.png';
 
 const loveMessages = [
   "You make my heart skip a beat.",
@@ -67,21 +66,21 @@ const ValentinePage = () => {
   }, [play]);
 
   useEffect(() => {
-    if (click >= 4) {
+    if (click > 5) {
       isnext(true)
     }
   }, [click])
 
   return (
     <div className="bg-pink-400 min-h-screen flex flex-col items-center justify-center">
-      <img src='https://i.ibb.co/KhDFqTN/IMG-8254-Background-Removed.png' className="w-64 h-auto" alt="logo" />
+      <img src='/dilla.png' className="w-64 h-auto" alt="logo" />
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Happy Valentine's Day!</h1>
         {next ? <div>
           <p className="text-lg mb-8">{title}</p>
           <div className="flex justify-center gap-4">
-            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" style={{ fontSize: 16 + noClicks * 10 }}onClick={handleYesClick} >Yes</button>
-            <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" onClick={handleNoClick} >{noMessage[noClicks]} </button>
+            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" style={{ fontSize: 16 + noClicks * 20 }} onClick={handleYesClick} >Yes</button>
+            <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" style={{ width: 100, height: '100%' }} onClick={handleNoClick} >{noMessage[noClicks]} </button>
           </div>
         </div>
           :
@@ -92,9 +91,9 @@ const ValentinePage = () => {
       </div>
       {showHearts && (
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-          <img src='https://static.vecteezy.com/system/resources/previews/010/331/422/original/little-hearts-clipart-with-transparent-background-for-decoration-of-art-file-free-png.png' alt="Heart" className="w-16 h-16 animate-spin" />
-          <img src='https://static.vecteezy.com/system/resources/previews/010/331/422/original/little-hearts-clipart-with-transparent-background-for-decoration-of-art-file-free-png.png' alt="Heart" className="w-16 h-16 animate-spin" />
-          <img src='https://static.vecteezy.com/system/resources/previews/010/331/422/original/little-hearts-clipart-with-transparent-background-for-decoration-of-art-file-free-png.png' alt="Heart" className="w-16 h-16 animate-spin" />
+          <img src='./love.png' className="w-28 h-w-28 animate-spin" />
+          <img src='./love.png' className="w-28 h-w-28 animate-spin" />
+          <img src='./love.png' className="w-28 h-w-28 animate-spin" />
         </div>
       )}
       <audio id="audioPlayer" autoPlay>
